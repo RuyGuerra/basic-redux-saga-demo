@@ -6,7 +6,7 @@ import * as api from '../../services/api';
 function* fetchShows(action) {
   try {
     const shows = yield call(api.fetchShows, action.payload.term);
-    yield put(actions.showSearchSucceed(shows));
+    yield put(actions.showSearchSucceed(shows.data));
   } catch (error) {
     yield put(actions.showSearchFailed(error.message));
   }

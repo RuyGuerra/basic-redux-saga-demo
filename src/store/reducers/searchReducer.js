@@ -3,7 +3,8 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
   term: '',
   shows: [],
-  error: ''
+  error: '',
+  isFetching: false
 }
 
 const searchReducer = (state = initialState, action) => {
@@ -13,19 +14,22 @@ const searchReducer = (state = initialState, action) => {
     case actionTypes.SHOW_SEARCH_REQUESTED:
       return {
         ...state,
-        term: action.payload.term
+        term: action.payload.term,
+        isFetching: true
       }
 
     case actionTypes.SHOW_SEARCH_SUCCEED:
       return {
         ...state,
-        shows: action.payload.shows
+        shows: action.payload.shows,
+        isFetching: false
       }
 
     case actionTypes.SHOW_SEARCH_FAILED:
       return {
         ...state,
-        error: action.payload.error
+        error: action.payload.error,
+        isFetching: false
       }
 
     default:

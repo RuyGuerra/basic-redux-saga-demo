@@ -1,0 +1,11 @@
+.shows-list-container {
+    max-width: 600px;
+    margin: auto;
+    /* float: left; */
+    /* background-color: blueviolet; */
+    /* padding: 50px; */
+}
+
+.item-list {
+    text-align: left;
+}
